@@ -1,2 +1,4 @@
 # Dynamic Programming 
 Dynamic programming was very intimidating to me. Most of the problems that involved DP were very long and difficult which made me set-aside learning DP. This article will hopefully make it easier on myself to gain a better grasp of what DP is. To start, it is important to understand that dynamic programming is a tool for **optimization** of problems. 
+
+The motivation behind DP is to systematically search all possibilities **without redundant recomputation**. In general, DP stores previously computated data so that the algorithm does not have to recompute but reference the previously computed data. 
