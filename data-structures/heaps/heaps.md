@@ -16,3 +16,5 @@ When is a Heap useful?
 Pros of a Heap:
 * Quick-access to nodes by index (will get into why later)
 * In-place sorting (sorting is just swapping indices)
+
+## Implementation (see [heap-implementation](https://github.com/eric2523/eze-study-guide/blob/main/data-structures/heaps/implement-heap-solution.js))
