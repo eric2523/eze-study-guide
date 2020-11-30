@@ -9,3 +9,12 @@ Overall, if we see a recursive problem that calculates subproblems over and over
 Take a look at fib numbers. The formula is F<sub>*n*</sub> = F<sub>*n - 1*</sub> + F<sub>*n - 2*</sub>, F<sub>0</sub> = 0, F<sub>1</sub> = 1. Implementing this using recursion is simple but inefficient. Why? Because we need to make redudant calculations of prior numbers. To get Fib of N = 4, we need to compute Fib of N = 3, Fib of N = 2, etc. 
 
 To speed this up with dynamic programming, we can store the values and reference them in future calls in O(1) time. The trade-off is space for time. But with DP we only need to compute any N fib once. Overall, we can calculate F<sub>*n*</sub> in linear time. 
+
+## Longest Palindromic Substring (Leetcode Problem #5)
+
+If you're not familiar with the problem, take a look at the problem [here](https://leetcode.com/problems/longest-palindromic-substring/). We'll first look at the brute force solution to shed light onto why this is a good candidate for DP. 
+
+### Brute Force Solution
+Generate all possible substrings, and for each substring, check if it's a palindrome. This would take O(N<sup>2</sup>) time as we do a nested loop to compare each *n* element *n* times. Then to check if its a palindrome, we would need to loop through a str of length *n* again in O(N) time. Total time would be O(N<sup>3</sup>).
+
+
