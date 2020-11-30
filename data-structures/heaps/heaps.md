@@ -3,3 +3,16 @@ A **heap** is a partially ordered data structure that can be visualized as a BST
 
 ## Max Heap
 Invariant (fancy word for "never changing"): Given any node, its children must be less than or equal to the node. 
+
+![max-heap](https://github.com/eric2523/eze-study-guide/blob/main/data-structures/heaps/max-heap.png?raw=true)
+
+Notice that root node is absolute max. Also notice that unlike BSTs, left keys are not always smaller than right keys. This means that there are no gurantees amongst siblings or cousins. Guranteed relationship only flows down the tree from parent to child. 
+
+When is a Heap useful?
+* When we need quick access to largest/smallest item. With a Max/MinHeap, the largest or smallest item will always be at the root node. Note that O(1) access is only available to the root (only largest/smallest item). 
+* Attacking problems where you need to "partially" sort data
+  * Ex/ calculate largest/smallest n numbers of collection 
+
+Pros of a Heap:
+* Quick-access to nodes by index (will get into why later)
+* In-place sorting (sorting is just swapping indices)
