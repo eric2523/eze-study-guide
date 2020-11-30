@@ -5,3 +5,5 @@ The motivation behind DP is to systematically search all possibilities **without
 
 ## Fibonacci Numbers
 Take a look at fib numbers. The formula is F<sub>*n*</sub> = F<sub>*n - 1*</sub> + F<sub>*n - 2*</sub>, F<sub>0</sub> = 0, F<sub>1</sub> = 1. Implementing this using recursion is simple but inefficient. Why? Because we need to make redudant calculations of prior numbers. To get Fib of N = 4, we need to compute Fib of N = 3, Fib of N = 2, etc. 
+
+To speed this up with dynamic programming, we can store the values and reference them in future calls in O(1) time. The trade-off is space for time. But with DP we only need to compute any N fib once. Overall, we can calculate F<sub>*n*</sub> in linear time. 
