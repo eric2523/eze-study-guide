@@ -4,6 +4,8 @@ A **heap** is a partially ordered data structure that can be visualized as a BST
 ## Max Heap
 Invariant (fancy word for "never changing"): Given any node, its children must be less than or equal to the node. 
 
+Heaps are represented with complete trees because complete trees allows us to use a compact array with no explicit links. Heaps are pretty inflexible, but they give just enough wiggle room to implement log(n) *insert* and *deleteMax/Min*. Heaps can move up and down paths without pointers through indices.
+
 ![max-heap](https://github.com/eric2523/eze-study-guide/blob/main/data-structures/heaps/max-heap.png?raw=true)
 
 Notice that root node is absolute max. Also notice that unlike BSTs, left keys are not always smaller than right keys. This means that there are no gurantees amongst siblings or cousins. Guranteed relationship only flows down the tree from parent to child. 
