@@ -17,4 +17,5 @@ If you're not familiar with the problem, take a look at the problem [here](https
 ### Brute Force Solution
 Generate all possible substrings, and for each substring, check if it's a palindrome. This would take O(N<sup>2</sup>) time as we do a nested loop to compare each *n* element *n* times. Then to check if its a palindrome, we would need to loop through a str of length *n* again in O(N) time. Total time would be O(N<sup>3</sup>).
 
-
+### So why is this a good candidate for DP?
+Look at the case of "abcba". If we start from the middle of the string at "c" we knocked down one possibility (one letter are palidromes). If we expand out to "bcb" we know in order for a word to be a palindrome, first letter = last, and anything in between has to be a palindrome too. Wait! We just figured the string in between ("c")! Why make a redudant computation when dynamic programming exists? *"Ooo Ahhh"*. 
