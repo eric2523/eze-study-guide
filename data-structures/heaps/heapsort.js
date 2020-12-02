@@ -14,3 +14,8 @@ function heapSort(array){
   }
   return sorted
 }
+// Time Complexity Analysis: O(n log (n))
+// 1: O(n) as we go through each ele in the array. log(n) for each insert
+//  - But true time of heapify is actually amortized O(n)
+// 2: Loop requires n steps. Each n step requires a log(n) delete max operation.
+//  - Total time for step 2 is O(n log(n))
