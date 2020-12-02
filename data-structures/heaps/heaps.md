@@ -30,7 +30,7 @@ Click [here](https://github.com/eric2523/eze-study-guide/blob/main/data-structur
 2. *sortdown*: pull items out of heap in decreasing order (if working with a max heap) to create sorted result 
 
 ## Regular Heap Sort
-Regular heap sort is pretty simple. We construct a new heap with the given array and continously deleteMax until the heap is empty. Checkout the actual implementation for the real code
+Regular heap sort is pretty simple. We construct a new heap with the given array and continously deleteMax until the heap is empty. Checkout the [actual implementation](https://github.com/eric2523/eze-study-guide/blob/main/data-structures/heaps/heapsort.js) for the real code. Below is some psuedocode. 
 ```js
 function heapSort(array){
   let heap = new MaxHeap()
