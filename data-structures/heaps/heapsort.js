@@ -19,3 +19,5 @@ function heapSort(array){
 //  - But true time of heapify is actually amortized O(n)
 // 2: Loop requires n steps. Each n step requires a log(n) delete max operation.
 //  - Total time for step 2 is O(n log(n))
+// Space Complexity Analysis: O(n)
+//  - O(n) for the heap that is constructed 
