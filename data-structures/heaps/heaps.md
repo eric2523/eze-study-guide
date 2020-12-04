@@ -44,3 +44,29 @@ function heapSort(array){
   return sorted
 }
 ```
+
+## In-place Heap Sort
+We are going to follow the same two steps: construction and sortdown. But construction is going to be a little different since we want to do this in-place without extra space. 
+
+Construction:
+* Have two regions:
+  1. Heap region
+  2. Sorted region 
+* Begin by making entire region into heap
+* Continuously delete max and expand sorted region
+  * As heap region shrinks, sorted region grows
+  * delete max will be swapping the front of the heap with the last element of the heap. This effectively grows sorted and shrinks heap by 1.  
+
+```js
+function heapSort(array){
+  for(right to left of array){
+    heapify(array)
+  }
+
+  until(heap size is 0){
+    swap(array, 0, endOfHeap)
+  }
+
+  return array
+}
+```
