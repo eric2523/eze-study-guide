@@ -59,12 +59,13 @@ Construction:
 
 ```js
 function heapSort(array){
-  for(right to left of array){
+  for(right -> left of array){
     heapify(array)
   }
 
   until(heap size is 0){
     swap(array, 0, endOfHeap)
+    heapify(array, 0, endOfHeap)
   }
 
   return array
