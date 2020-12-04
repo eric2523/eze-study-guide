@@ -21,3 +21,31 @@ function heapSort(array){
 //  - Total time for step 2 is O(n log(n))
 // Space Complexity Analysis: O(n)
 //  - O(n) for the heap that is constructed 
+
+// In-place Heap Sort
+function swap(array, i, j){
+  [array[i], array[j]] = [array[j], array[i]]
+}
+
+function heapify(array, n, i){
+  let leftIdx = 2 * i + 1;
+  let rightIdx = 2 * i + 2;
+
+  let leftVal = array[leftIdx]
+  let rightVal = array[rightIdx]
+
+  if (leftVal === undefined) leftVal = -Infinity
+  if (rightVal === undefined) rightVal = - Infinity
+
+  if (array[i] > leftVal && array[i] > rightVal) return;
+
+  let swapIdx;
+  if (leftVal < rightVal){
+    swapIdx = leftIdx
+  } else {
+    swapIdx = rightIdx
+  }
+
+  swap(array, i, swapIdx)
+  heapify(array, n, swapIdx)
+}
