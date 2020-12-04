@@ -34,18 +34,31 @@ function heapify(array, n, i){
   let leftVal = array[leftIdx]
   let rightVal = array[rightIdx]
 
-  if (leftVal === undefined) leftVal = -Infinity
-  if (rightVal === undefined) rightVal = - Infinity
+  if (leftIdx >= n) leftVal = -Infinity
+  if (rightIdx >= n) rightVal = - Infinity
 
   if (array[i] > leftVal && array[i] > rightVal) return;
 
   let swapIdx;
   if (leftVal < rightVal){
-    swapIdx = leftIdx
-  } else {
     swapIdx = rightIdx
+  } else {
+    swapIdx = leftIdx
   }
 
   swap(array, i, swapIdx)
   heapify(array, n, swapIdx)
+}
+
+function heapSort(array){
+  for(let i = array.length - 1; i >= 0; i--){
+    heapify(array, array.length, i)
+  }
+  
+  for(let endOfHeap = array.length -1; endOfHeap >= 0; endOfHeap--){
+    swap(array, endOfHeap, 0)
+    heapify(array, endOfHeap, 0)
+  }
+  
+  return array
 }
