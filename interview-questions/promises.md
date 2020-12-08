@@ -7,3 +7,7 @@ Think of a promise as letters that consists of data that can be opened and read 
 1. ***pending***: we're still waiting for a reply from the server and there's no way to tell if my request was successful or not yet. :shrug: 
 2. ***fulfilled***: yay our request is approved and we received the data we wanted!
 3. ***rejected***: Hmm, there seems to have been an error and we need to decide what we want to do that error message
+
+### Diagram of Promise States and Lifecycle
+![promise-diagram](https://mdn.mozillademos.org/files/15911/promises.png)
+https://mdn.mozillademos.org/files/15911/promises.png
