@@ -8,6 +8,8 @@ Think of a promise as letters that consists of data that can be opened and read 
 2. ***fulfilled***: yay our request is approved and we received the data we wanted!
 3. ***rejected***: Hmm, there seems to have been an error and we need to decide what we want to do that error message
 
+Promises can only succeed or fail once. It also cannot switch from succeeding to failing or vice-versa. With promises, you don't care when something happened. You are more interested in how you're reacting to an outcome.
+
 ### Diagram of Promise States and Lifecycle
 ![promise-diagram](https://mdn.mozillademos.org/files/15911/promises.png)
 https://mdn.mozillademos.org/files/15911/promises.png
