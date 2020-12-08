@@ -10,3 +10,11 @@ Pros:
 
 Cons:
   * Can increase client-side load on web server (ex: auto-updating features)
+
+### Example request with jQuery library
+```js
+$.ajax({
+    method: "post",
+    url: `/api/users/${userId}/user_follows`,
+  })
+```
