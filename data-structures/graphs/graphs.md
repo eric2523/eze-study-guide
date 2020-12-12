@@ -31,3 +31,17 @@ Pros:
 Cons:
 * Dam does it take up space. For *N* nodes we need *N<sup>2</sup>* space. 
 * If we have very few edges, most of the matrix would be filled with false values. 
+
+## Adjacency List Implementation
+We can also use an object that stores nodes as keys and an array of adjacent nodes as values. The space required is going to be the number of edges in the graph. Worse case there will be N<sup>2</sup> edges where every node points to all other nodes.
+
+```js
+let graph = {
+  'a': ['b', 'c', 'e'],
+  'b': [],
+  'c': ['b', 'd'],
+  'd': [],
+  'e': ['a'],
+  'f': ['e']
+};
+```
