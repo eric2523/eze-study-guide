@@ -24,3 +24,4 @@ let matrix = [
 /*E*/    [true,  false,  false,  false,  true,   false],
 /*F*/    [false, false,  false,  false,  true,   true]
 ```
+Let's say we wanted to find if C has an edge connecting B. We can just refer to slot in matrix[2][1] to see if we have an edge connecting C to B. IT IS IMPORTANT to understand that matrix[2][1] is FROM C TO B. Not the other way around!! If we look at matrix[1][2] we get false. 
