@@ -11,3 +11,4 @@ With any backtracking problem, we need to think about 3 things before we start c
 I think a good way of thinking about paths and choices can be thought of as going through a maze. Let's say you're walking through a maze at point A and you want to reach point Z. If you reach a fork and must either go to point B or C, what happens if you go to a wrong path? You go back or *backtrack* and go to the next path. Deciding which path to take is exactly how we think of paths when doing a problem like N Queens or Palindromic Partitioning. 
 
 ![backtrack-diagram](./back-track-1.png)
+Red represents our initial path from A to C. Green represents our backtrack. 
