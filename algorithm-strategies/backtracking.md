@@ -13,3 +13,6 @@ I think a good way of thinking about paths and choices can be thought of as goin
 ![backtrack-diagram](./back-track-1.png)
 
 Red represents our initial path from A to C. Green represents our backtrack. 
+
+### Selection List
+I think selection list has one more caveat to it which is equally as important as the 3 terms above. The caveat is  **CONSTRAINTS**. What makes a path valid? Invalid? 
