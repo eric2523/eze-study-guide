@@ -1,1 +1,2 @@
 # Backtracking
+Backtracking sounded very intimidating to me but after I followed [labuladong's](https://github.com/labuladong) template (can be found [here](https://github.com/labuladong/fucking-algorithm)) on how to solve backtracking problems, N Queens problem was a breeze. 
