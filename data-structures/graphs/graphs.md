@@ -30,8 +30,9 @@ Let's say we wanted to find if C has an edge connecting B. We can just refer to 
 
 Pros:
 * Can refer to the entire graph just from the matrix
+
 Cons:
-* Dam does it take up space. For *N* nodes we need *N<sup>2</sup>* space. 
+* Dang does it take up space. For *N* nodes we need *N<sup>2</sup>* space. 
 * If we have very few edges, most of the matrix would be filled with false values. 
 
 ## Adjacency List Implementation
@@ -47,3 +48,9 @@ let graph = {
   'f': ['e']
 };
 ```
+
+Pros:
+* Can refer to entire graph through just an object
+
+Cons:
+* Space is still pretty big. The space required is the number of edges in the graph. Worst case: every node is connected to each other and thus n<sup>2</sup> edges
