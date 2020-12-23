@@ -54,3 +54,15 @@ Pros:
 
 Cons:
 * Space is still pretty big. The space required is the number of edges in the graph. Worst case: every node is connected to each other and thus n<sup>2</sup> edges
+
+## GraphNode Class Implementation
+Implementation is similar to binary trees. We have an node class that has references to the value and the node's neighbors. Con is that we have no easy way to refer to the entire graph. We only have a rough idea of what ONE node MIGHT look like. How will we pass this to a function if we might not have a root node? 
+
+```js
+class GraphNode{
+  constructor(val){
+    this.val = val
+    this.neighbors = []
+  }
+}
+```
