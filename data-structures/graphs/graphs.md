@@ -56,7 +56,7 @@ Cons:
 * Space is still pretty big. The space required is the number of edges in the graph. Worst case: every node is connected to each other and thus n<sup>2</sup> edges
 
 ## GraphNode Class Implementation
-Implementation is similar to binary trees. We have an node class that has references to the value and the node's neighbors. Con is that we have no easy way to refer to the entire graph. We only have a rough idea of what ONE node MIGHT look like. How will we pass this to a function if we might not have a root node? 
+Implementation is similar to binary trees. We have an node class that has references to the value and the node's neighbors. Con is that we have no easy way to refer to the entire graph. We only have a rough idea of what ONE node MIGHT look like. How will we pass this to a function if we might not have a root node? More on this below.
 
 ```js
 class GraphNode{
@@ -64,5 +64,17 @@ class GraphNode{
     this.val = val
     this.neighbors = []
   }
+}
+```
+
+## Graph Traversals
+Let's start with Depth-First search on our GraphNode class. We can go through every neighbor and use a Set to store previously seen nodes. 
+
+![graph-1](./graph-1.png)
+
+### DFS using Recursion
+```js
+function dfsRecur(node){
+
 }
 ```
