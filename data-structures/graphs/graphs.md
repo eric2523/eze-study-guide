@@ -135,3 +135,21 @@ function _dfs(node, graph, visited){
   )
 }
 ```
+
+Imagine if we have a graph like this. This is actually a single graph but called a "forest" because it consists of x "trees". 
+
+![forest-graph](./forest.png)
+
+Our adjancecy list will look like:
+```js
+let graph = {
+  h: [i, j],
+  i: [],
+  j: [k],
+  k: [],
+  l: [m],
+  m: []
+}
+```
+
+We start at node *h* which will recurse to *i*, *j*, and *k*. After our initial recursion, we go back to the for loop to visit all other keys in the adjacency list object. 
