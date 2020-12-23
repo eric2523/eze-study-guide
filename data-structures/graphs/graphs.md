@@ -72,9 +72,42 @@ Let's start with Depth-First search on our GraphNode class. We can go through ev
 
 ![graph-1](./graph-1.png)
 
-### DFS using Recursion
+### Recursive DFS
+
 ```js
 function dfsRecur(node){
+  let seen = new Set();
+  // base case: if we've already seen the node, return early
+  if (seen.has(node)) return;
 
+  // else we process the node (in this case we console log it)
+  console.log(node.val)
+  // then add it to the seen Set 
+  seen.add(node)
+
+  // recurse on the node's neighbor 
+  node.neighbors.forEach( neighbor => 
+    dfsRecur(neighbor)
+  )
+}
+```
+
+### Iterative DFS
+
+```js
+function dfsIterative(node){
+  let stack = [node];
+  let seen = new Set();
+
+  while (stack.length){
+    let n = stack.pop();
+
+    // if we already processed the node, continue to next node
+    if (seen.has(n)) continue;
+
+    // else we process the node and push it's neighbors onto the stack
+    console.log(n.val)
+    stack.push(...node.neighbors)
+  }
 }
 ```
