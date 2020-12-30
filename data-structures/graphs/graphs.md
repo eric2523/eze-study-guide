@@ -158,3 +158,44 @@ We start at node *h* which will recurse to *i*, *j*, and *k*. After our initial 
 Let's first consider a connected graph where we assume that all nodes are reachable from a starting node *s*. 
 
 ![bfs-ex1](./bfs-adj-1.png)
+
+### Frontier/Level Implementation
+The frontier variable is a array that stores all the nodes in a level. In this example, Node 1 is on level 0, Node 2 and 3 is on level 1, and so forth. The frontier variable is the queue in a normal bfs. In this case, we don't pop off elements off the queue but instead replace it with a new layer/level.
+```js
+let graph = {
+  1: [2, 3],
+  2: [5],
+  3: [4],
+  4: [],
+  5: [3]
+}
+
+function bfs(s, graph){
+// we will store two hashTables that references each node's level and parent element
+  let level = {};
+  let parent = {};
+  let i = 1;
+  level[s] = 0;
+
+  let frontier = [ s ]
+  while(frontier.length){
+    let next = [];
+    // iterate through current layer
+    for(const u of frontier){
+      // explore all neighbors
+      for(const v in graph[u]){
+        if (level[v] === undefined){
+          level[v] = i;
+          parent[v] = u;
+          next.push(v)
+        }
+      }
+    }
+    // set next layer
+    frontier = next;
+    // increment i as we moved layers 
+    i++
+  }
+}
+
+```
