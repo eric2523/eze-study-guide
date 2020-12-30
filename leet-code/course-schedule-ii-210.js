@@ -29,7 +29,7 @@
 //  */
 
 // Total space and time: O(V + E) where V = num of vertices (courses) and E = num of edges (prereqs)
-var findOrder = function(numCourses, prerequisites) {
+var findOrderBFS = function(numCourses, prerequisites) {
   let indegrees = new Array(numCourses).fill(0)
 
   // O(E) edges
@@ -64,6 +64,7 @@ var findOrder = function(numCourses, prerequisites) {
   return (output.length === numCourses ) ? output : []
 };
 
-console.log(findOrder(2, [[1,0]])) // [0, 1]
-console.log(findOrder(4, [[1,0],[2,0],[3,1],[3,2]]))  // [0,2,1,3] or [0,1,2,3]
-console.log(findOrder(3, [[1,0],[1,2],[0,1]])) // []
+// console.log(findOrderBFS(2, [[1,0]])) // [0, 1]
+// console.log(findOrderBFS(4, [[1,0],[2,0],[3,1],[3,2]]))  // [0,2,1,3] or [0,1,2,3]
+// console.log(findOrderBFS(3, [[1,0],[1,2],[0,1]])) // []
+// console.log(findOrderBFS(1, [])) // [0]
