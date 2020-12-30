@@ -153,3 +153,8 @@ let graph = {
 ```
 
 We start at node *h* which will recurse to *i*, *j*, and *k*. After our initial recursion, we go back to the for loop to visit all other keys in the adjacency list object. 
+
+### BFS with Adjacency List
+Let's first consider a connected graph where we assume that all nodes are reachable from a starting node *s*. 
+
+![bfs-ex1](./bfs-adj-1.png)
