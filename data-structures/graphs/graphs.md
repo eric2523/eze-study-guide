@@ -184,6 +184,7 @@ function bfs(s, graph){
     for(const u of frontier){
       // explore all neighbors
       for(const v in graph[u]){
+        // level hashMap is our visited checker. If it is not undefined that we have already explored this node
         if (level[v] === undefined){
           level[v] = i;
           parent[v] = u;
