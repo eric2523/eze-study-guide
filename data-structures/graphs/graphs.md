@@ -181,10 +181,12 @@ function bfs(s, graph){
   while(frontier.length){
     let next = [];
     // iterate through current layer
+    // we look at all nodes in the frontier (current layer)
     for(const u of frontier){
-      // explore all neighbors
+      // explore all neighbors that we can reach from the nodes in the frontier
+      // nested for loop indicates that there is an edge from u -> v 
       for(const v in graph[u]){
-        // level hashMap is our visited checker. If it is not undefined that we have already explored this node
+        // level hash-table is our visited checker. If it is not undefined that we have already explored this node
         if (level[v] === undefined){
           level[v] = i;
           parent[v] = u;
@@ -198,5 +200,4 @@ function bfs(s, graph){
     i++
   }
 }
-
 ```
