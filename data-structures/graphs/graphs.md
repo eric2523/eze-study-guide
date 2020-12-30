@@ -201,3 +201,5 @@ function bfs(s, graph){
   }
 }
 ```
+
+The cool thing about BFS is that the parent paths actually gives us the shortest paths from starting node to a destination node. BFS gives us the fastest way to get to every where by exploring layer by layer. BFS is generally used when determining a part reachable from starting node *s* unlike DFS which is generally used for problems that need the whole graph. 
