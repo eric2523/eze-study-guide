@@ -218,3 +218,9 @@ The cool thing about BFS is that the parent paths actually gives us the shortest
 **Backward Edge**: if *v* is an ancestor of *u*
 
 **Cross Edge**: if *v* is neither an ancestor or descendant of *u*
+* between two non-ancestor related subtrees 
+
+### Cycle Detention 
+Graph has a cycle if the graph has a backedge. 
+
+![back-edge](./back-edge.png)
