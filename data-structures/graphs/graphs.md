@@ -112,7 +112,7 @@ function dfsIterative(node){
 }
 ```
 
-There is a problem with this implementation. What node do we pick to start our DFS? If we look at the img its clear that node F is the root but how will the ClassNode know? Also, if we chose a bad starting node we might not be able to search through all nodes. An advantage of using an Adjacency List is that we can pass the entire graph representation as a parameter. 
+There is a problem with this implementation. What node do we pick to start our DFS? If we look at the img its clear that node F is the root but how will the ClassNode know? Also, if we chose a bad starting node we might not be able to search through all nodes. An advantage of using an Adjacency List is that we can pass the entire graph representation as a parameter. The above implementation is also known as DFS-Visit.
 
 ### Recursive DFS with Adjancency List
 ```js
