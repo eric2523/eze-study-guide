@@ -68,4 +68,10 @@ animate();
 
 Notice how **Camera** object is halfway in the scenegraph. Camera objects doesn't have to be in scenegraph to function. Camera acts just like other objects where it is oriented relative to its parent object. 
 
-**Mesh** objects are representation of drawings that consists of a specific **Geometry** and **Material**. **Geometry** and **Material** objects can be used by multiple **Mesh** objects. 
+**Mesh** objects are representation of drawings that consists of a specific **Geometry** and **Material**. **Geometry** and **Material** objects can be used by multiple **Mesh** objects. Example if we wanted to draw 2 green cubes, we need 2 mesh objects but only 1 geometry object and 1 material object. 
+
+**Geometry** objs represent vertex data of geometric figures. Three.js has many built-in ones but can also load data from files. 
+
+**Material** objs represent surface properties used to draw geometric figures like how shiny something is, color, etc. Material objs can reference one or more **Texture** objs which generally represent images. Kind of like wrapping paper looking thing on Adobe Photoshop. 
+
+**Light** objs represent diff kinds of light. 
