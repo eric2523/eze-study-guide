@@ -61,3 +61,11 @@ function animate() {
 }
 animate();
 ```
+
+![graph-1](./graph-1.svg)
+
+**Scenegraph** is a tree-like structure that consists of various objects as seen above. A **Scene** object defines the root of scenegraph and contains properties like textures, materials, etc. The tree-like is hierarchical which means the children is oriented relative to the parent. For example the wheels of a car are children where the car itself is the parent. If we move the car, the wheels move with it. 
+
+Notice how **Camera** object is halfway in the scenegraph. Camera objects doesn't have to be in scenegraph to function. Camera acts just like other objects where it is oriented relative to its parent object. 
+
+**Mesh** objects are representation of drawings that consists of a specific **Geometry** and **Material**. **Geometry** and **Material** objects can be used by multiple **Mesh** objects. 
