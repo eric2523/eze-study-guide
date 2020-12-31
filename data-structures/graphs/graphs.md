@@ -203,3 +203,18 @@ function bfs(s, graph){
 ```
 
 The cool thing about BFS is that the parent paths actually gives us the shortest paths from starting node to a destination node. BFS gives us the fastest way to get to every where by exploring layer by layer. BFS is generally used when determining a part reachable from starting node *s* unlike DFS which is generally used for problems that need the whole graph. 
+
+### DFS Edge Classifications
+
+![edge-classification](./edge-classification.jpg)
+
+**Tree Edge**: an edge that is present after applying DFS on the graph. All green edges in the pic above 
+* visit a new vertex via an edge 
+
+**Forward Edge**: an edge (u, v) that connects an ancestor of *u* that is not part of the graph
+* there is a path from *u* to *v* going forward
+* Edge from 1 to 8 is a forward edge
+
+**Backward Edge**: if *v* is an ancestor of *u*
+
+**Cross Edge**: if *v* is neither an ancestor or descendant of *u*
