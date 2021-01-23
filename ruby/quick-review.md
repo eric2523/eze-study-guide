@@ -135,3 +135,53 @@ Strings are unique objects
   a == b # => true
   a.object_id == b.object_id # => false 
 ```
+# Symbols
+```rb
+  # Symbols are Symbols
+  some_symbol = :ruby
+  some_symbol.is_a?(Symbol) # => true 
+
+  # Symbols can be compared
+  sym1 = :a_symbol
+  sym2 = :a_symbol
+  sym3 = :b_symbol
+  sym1 == sym2 # => true 
+  sym1 == sym3 # => false 
+
+  # Identical symbols share one object_id 
+  sym1.object_id == sym2.object_id # => true 
+```
+
+Method names become symbols. This is why we use can use methods in Rails for associations. 
+
+```rb
+def some_method_name 
+  symbols_as_strings = Symbol.all_symbols.map{ |x| x.to_s }
+  return symbols_as_strings.include?("some_method_name")
+end
+
+some_method_name #=> true 
+```
+
+Symbols can be built with spaces
+```rb
+  "space space space".to_sym #=> :"space space space"
+```
+Symbols can built with interpolation
+```rb
+  word = "soup"
+  my_symbol = :"chicken noodle #{word}"
+  my_symbol # => :"chicken noodle soup"
+```
+Interpolated symbols are turned into strings (.to_s)
+```rb
+  my_sym = :bang
+  str = "Fireworks go #{my_sym}"
+  str # => "Fireworks go bang"
+```
+
+String methods do not work on symbols. Symbols are not "immutable strings", though they are immutable. Symbols can be dynamically created. 
+
+```rb
+  ("cats" + "dogs").to_sym # => :catsdogs
+```
