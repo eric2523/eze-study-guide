@@ -112,8 +112,26 @@ We prefer using << operations instead of += when building strings because we avo
   first << second 
   original # => "Hello World"
 ```
+
 | Double quotes ""          | Single quotes ''                 |
 |---------------------------|----------------------------------|
 | Interpret escape chars \n | Do not interpret escape chars \n |
 | Interpolate variables     | Do not interpolate               |
 |                           | Sometimes interpret escape chars |
+
+```rb
+  word = "im in there"
+  good_interpolation = "This #{word} will be interpolated" # => "This im in there will be interpolated"
+  bad_interpolation = 'This #{word} will not be interpolated' #=> 'This #{word} will not be interpolated'
+
+  # Any Ruby expression can be interpolated
+  good_interpolation = "The square root of 6 is #{Math.sqrt(6)}"
+```
+
+Strings are unique objects
+```rb
+  a = "a string"
+  b = "b string"
+  a == b # => true
+  a.object_id == b.object_id # => false 
+```
