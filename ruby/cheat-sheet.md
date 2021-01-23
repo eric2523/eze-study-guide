@@ -61,3 +61,59 @@ h1.rehash # => { [:baz, :bar] => 0 }
 h1.include?(arr0) # => true 
 h1[arr0] # => 0 
 ```
+
+# Strings
+### Flexible quotes can handle long-complicated strings. Can use almost any non-alphabetic & non-whitespace char. 
+```rb
+  a = %(flexible quotes can handle both ' and ")
+  b = %!flexible quotes can handle both ' and " characters!
+  c = %{flexible quotes can handle both ' and " characters}
+
+  a == b # => true
+  a == c # => true 
+```
+
+### Flexible quotes can also handle multiple lines. Using the ```.lines``` method splits string into an array based off \n. 
+
+```rb
+  long_str = %{
+    It was the best of times,
+    It was the worse of times
+    }
+
+  long_str.lines # => ["\n", "It was the best of times,\n", "It was the worse of times\n"]
+  long_str.lines.count # => 3
+```
+
+### String Concatenation 
+We prefer using << operations instead of += when building strings because we avoid creating multiple objects. This can reduce the number of bugs by keeping our responsibilites onto one object. 
+```rb
+  # Plus operations will leave the string unmodified/unmutated 
+  first = "Hello "
+  second = "World!"
+  string = first + second # => "Hello World!"
+  first # => "Hello " 
+  second # => "World!"
+
+  # += and << will append to end of string
+  first = "My "
+  second = "Name:" 
+  first += second 
+  first # => "My Name:"
+  first << second 
+  first # => "My Name:Name:"
+
+  # += will leave original string unmodified, << will not 
+  original = "Hello "
+  first = original
+  second = "World" 
+  first += second # => "Hello World"
+  original # => "Hello "
+  first << second 
+  original # => "Hello World"
+```
+| Double quotes ""          | Single quotes ''                 |
+|---------------------------|----------------------------------|
+| Interpret escape chars \n | Do not interpret escape chars \n |
+| Interpolate variables     | Do not interpolate               |
+|                           | Sometimes interpret escape chars |
