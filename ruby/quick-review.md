@@ -185,3 +185,6 @@ String methods do not work on symbols. Symbols are not "immutable strings", thou
 ```rb
   ("cats" + "dogs").to_sym # => :catsdogs
 ```
+
+# RegEx ): 
+Created using /.../ and %r{...} literals, and by Regexp::new constructor. 
