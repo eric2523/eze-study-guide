@@ -188,3 +188,55 @@ String methods do not work on symbols. Symbols are not "immutable strings", thou
 
 # RegEx ): 
 Created using /.../ and %r{...} literals, and by Regexp::new constructor. 
+```rb
+  # search a string for matching content 
+  "some matching content"[/match/] # => "match"
+
+  # will return nil if something fails to match
+  "some matching content"[/missing/] # => nil 
+
+  # question (?) marks mean optional 
+  "abbccdd"[/ab?/] # => "ab" 
+  "abbccdd"[/az?/] # => "a"
+
+  # plus (+) means one or more 
+  "aaaabccccdddd"[/bc+/] # => "bcccc"
+
+  # asterisk (*) means zero or more 
+  "aaabddd"[/bd*/] # => "bddd"
+
+  # left most match wins 
+  "abbccc az"[/az*/] # => "a"
+
+  # can use array to specifiy options 
+  animals = ["bat", "cat", "rat", "dat"]
+  animals.select{ |animal| animal[/[bar]at/]}) # => ["bat", "cat", "rat"]
+
+  # backslash d is shortcut for digits (\d)
+  "the number is 24"[/\d+/] # => "24" 
+
+  # array can include num ranges
+  "the number is 24"[/[0-9]+/] # => "24"
+
+  # \s is a shortcut for whitespace
+  "space: \t\n"[/\s+/] # => " \t\n" 
+
+  # (.) period is a shortcut for any non-newline char
+  "abc\n123"[/a.+/] # => "abc" remember left most match wins 
+
+  # any shortcut classes are negated if its capital
+  "ignore 24"[/\D+/] # => "ignore " 
+
+  # backslash \A anchors to the start of string 
+  "start end"[/\Astart/] # => "start"
+  "start end"[/\Aend/] # => nil
+
+  # backslash \z anchors to end of string
+  "start end"[/end\z/] # => "end" 
+  "start end"[/start\z/] # => nil
+
+  # caret (^) anchors to start of new lines (\n)
+  "num 55\n2 line"[/^\d+/] # => "2"
+  # dollar sign ($) anchors to end of new lines
+  "2 line\nnum 55"[/\d+$/]
+```
