@@ -240,3 +240,117 @@ Created using /.../ and %r{...} literals, and by Regexp::new constructor.
   # dollar sign ($) anchors to end of new lines
   "2 line\nnum 55"[/\d+$/]
 ```
+
+# Constants 
+Nested constants may be referenced with relative paths since self is always called implicity on variables in nested functions.
+```rb
+C = "we are at outmost scope"
+
+class MyClass 
+  C = "we are in a class" 
+
+  def relative_path_call
+    "we are in a class" == C # => true 
+  end
+
+  def get_nested_constant 
+    "we are in a class" == MyClass::C # => true 
+    "we are in a class" == ::MyClass::C # => true 
+  end
+
+  def get_top_level_constant
+    "we are at outmost scope" == ::C  # => true 
+  end
+end
+```
+
+Nested classes inherit constants from parent classes 
+```rb
+class ParentClass 
+  C = "im in the parent"
+
+  class ChildClass 
+    def get_parent_constant
+      return C
+    end
+  end
+end
+
+ParentClass::ChildClass.new.get_parent_constant # => "im in the parent" 
+```
+
+With a class that is both nested and inherited, the constant in the lexical scope takes precedence over the inheritance hierachy. 
+```rb
+class Animal
+  LEGS = 4 
+end
+
+class MyAnimal
+  LEGS = 2
+  
+  class Bird < Animal 
+    def get_constant 
+      LEGS 
+    end
+  end
+end
+
+MyAnimal::Bird.new.get_constant # => 2
+```
+
+# Control Statements (if else)
+If else statements always returns a value (Actually EVERY statement in Ruby will return a value)
+```rb
+  def if_statements_return_values
+    value = if true 
+              :true_value 
+            else 
+              :false_value 
+            end
+  end
+
+  if_statements_return_values #=> true 
+
+  def if_statements_return_values_regardless
+    value = if false 
+              :true_value
+            end
+  end
+
+  if_statements_return_values_regardless # => nil 
+```
+
+Ruby is pretty stylistic, there are some if statement modifiers and unless statements.
+
+```rb
+  def if_statement_modifier
+    value = :default_value
+    value = :new_value if true 
+  end
+
+  if_statement_modifier # => :new_value 
+
+  def unless_statements
+    value = :default_value
+    unless true # basically saying 'if !true' 
+      value = :new_value 
+    end
+    value 
+  end
+
+  unless_statements # => :default_value 
+```
+
+Break actually returns a value
+
+```rb
+  def break_returns_value 
+    i = 1
+    result = while i <= 10
+      break i if i % 2 == 0 
+      i += 1
+    end
+  end
+
+  break_returns_value # => 2 
+```
