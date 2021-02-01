@@ -58,3 +58,19 @@ Can use `toMatch` to compare strings to regexp
     expect('team').not.toMatch(/I/)
   })
 ```
+
+## Array and iterables
+Can check if an array or iterable contains a particular item using `toContain`
+```js
+const shoppingList = [
+  "diapers",
+  "peanuts",
+  "chips",
+  "shrimp"
+]
+
+test("don't forget shrimp!", () => {
+  expect(shoppingList).toContain("shrimp")
+  expect(new Set(shoppingList)).toContain("shrimp")
+})
+```
