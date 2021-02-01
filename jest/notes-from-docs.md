@@ -1,5 +1,8 @@
 # Intro
 Jest uses "matchers" to test values. Each test is a function that takes two args, an error message and a callback. 
+
+[Check out expect Jest Docs](https://jestjs.io/docs/en/expect) 
+
 ## Common Matchers
 Can use exact equality. 
 
@@ -72,5 +75,23 @@ const shoppingList = [
 test("don't forget shrimp!", () => {
   expect(shoppingList).toContain("shrimp")
   expect(new Set(shoppingList)).toContain("shrimp")
+})
+```
+
+## Expectations
+Can use `toThrow` to check for errors thrown 
+```js
+function throwSomeError() {
+  throw new Error("Yikes an error was thrown")
+}
+
+// Notice that we use a callback for the expect argument
+test("should throw an error", () => {
+  expect(() => throwSomeError()).toThrow();
+  expect(() => throwSomeError()).toThrow(Error);
+
+  // Can use RegExp or string to check message thrown
+  expect(() => throwSomeError()).toThrow("Yikes an error was thrown");
+  expect(() => throwSomeError()).toThrow(/error/);
 })
 ```
