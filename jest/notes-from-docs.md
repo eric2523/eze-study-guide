@@ -50,3 +50,11 @@ There are many matchers for comparison of numbers. Note that `toBe` and `toEqual
     expect(value).toBeCloseTo(0.5) // this wil work 
   })
 ```
+
+## Strings
+Can use `toMatch` to compare strings to regexp 
+```js
+  test("there is no I in team", () => {
+    expect('team').not.toMatch(/I/)
+  })
+```
