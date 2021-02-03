@@ -46,3 +46,33 @@ Snapshot tests preserve a starting point, but don't give any indication of devel
 
 ### Snapshop tests work well with auto-mocking 
 One problem with tests that rely on generating DOM in React is many components are actually made up of smaller components, that often use complicated logic to determine what to render. If we fully render everything, we're beginning to move away from the concept of a "unit test" as we are dependent upon another component's functionality. If we mock child components and helper functions, we can focus tests to only change based on logic of the individual component. 
+
+## Inline Snapshots
+Inline snapshots behave exactly like external snapshots(`.snap` files). Only difference is snapshot values are written back into source code. Means you get the benefit of automatically generated snapshots without having to reference an external file. Be sure to have Prettier installed. 
+
+## Property Matchers
+Often there are fields in the object that are generated dynamically like (IDs and Dates). If you try to snapshot these they will fail everytime as the output of these fields are different everytime. For these cases, Jest provides a matcher for different properties. These matchers are checked before snapshot is written or tested and then saved to snapshot file instead of the received value. 
+```js
+it('will check the matchers and pass', () => {
+  const user = {
+    createdAt: new Date(),
+    id: Math.floor(Math.random() * 20),
+    name: 'LeBron James',
+  };
+
+  expect(user).toMatchSnapshot({
+    // matchers right here 
+    createdAt: expect.any(Date),
+    id: expect.any(Number),
+  });
+});
+
+// Snapshot
+exports[`will check the matchers and pass 1`] = `
+Object {
+  "createdAt": Any<Date>,
+  "id": Any<Number>,
+  "name": "LeBron James",
+}
+`;
+```
